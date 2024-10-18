@@ -10,7 +10,7 @@ jobs:
           sudo apt-get install -y docker-compose
 
       - name: Build and Run Docker Compose
-        run: docker-compose up --build
+        run: docker-compose up --build -d
 name: CI/CD Pipeline
 'on':
   push:
