@@ -1,0 +1,16 @@
+name: start_contain
+
+on: push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Build Docker containers
+        run: docker-compose build
+
+      - name: Run Docker Compose
+        run: docker-compose up -d

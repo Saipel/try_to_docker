@@ -8,9 +8,9 @@ app = Flask(__name__)
 
 @app.route('/insert', methods=['GET', 'POST'])
 def home(data="ya russkiy"):
-    if request.method == 'POST':
-        result = request.get_json()
-        data = result['text']
+ if request.method == 'POST':
+    result = request.get_json()
+    data = result['text']
     conn = get_db_donnect()
     insert_some_data(data, conn)
     return f"Sucess insert. Insert data: {data}"
